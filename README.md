@@ -1,15 +1,15 @@
 # HW3
-##Question 2 (20 Points. Easy)
+## Question 2 (20 Points. Easy)
 
     Given a vector of integers v, and a number sum, return a vector of two items which are the indices of the two numbers in v such that they add up to sum. - If there is no answer, the return vector should be empty.
 
     - If there are multiple answers, return any of them.
 
-##Question 3 (60 Points. Medium)
+## Question 3 (60 Points. Medium)
 
     Implement the following class for a Linked List of integer values. All functions except for print() require a GTest.
 
-##Question 4 (20 Points. Medium)
+## Question 4 (20 Points. Medium)
 
     Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). An input expression is valid if:
 
@@ -21,7 +21,7 @@
 
     You should only check for the validity of brackets based on the above rules, i.e. ‘(‘, ‘)’, ‘[‘, ‘]’, ‘{‘, ‘}’, not the rest of the expression.
 
-##Question 5 (20 Points. Medium)
+## Question 5 (20 Points. Medium)
     Write a class that stores a student’s academic record. The academic record should hold marks for the following subjects:
 
     1. Maths.
@@ -30,7 +30,7 @@
 
     3. Physics.
 
-###Requirements:
+### Requirements:
     ● Implement the default constructor that initializes grades to 0.
 
     ● Implement a constructor that takes the initial grades as three parameters.
