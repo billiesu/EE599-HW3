@@ -23,13 +23,16 @@ int main()
     list.pop_back();
     std::cout << "after pop_back: ";
     list.print();
+    list.pop_front();
+    std::cout << "after pop_front: ";    
+    list.print();
     std::cout << "list's front is: " << list.front() << std::endl;
     std::cout << "list's back is: " << list.back() << std::endl;
     std::cout << "list is empty: "<< list.empty() << std::endl;
     std::cout << "list's size is: "<< list.size() << std::endl;
     std::cout << "GetBackPointer: " << list.GetBackPointer()->val << std::endl;
     std::cout << "Get3thPointer: " << list.GetIthPointer(3)->val << std::endl;
-
+   
 
     return EXIT_SUCCESS;
 }

@@ -16,15 +16,16 @@ struct ListNode{
 
 class SinglyLinkedList {
 public:
-  SinglyLinkedList();              //给head_赋值
-  SinglyLinkedList(const vector<int> &input, int i);   //
-  ~SinglyLinkedList();                         //母鸡呀
+  SinglyLinkedList();              //给head_ 赋空指针
+  SinglyLinkedList(const vector<int> &input, int i);   
+  ~SinglyLinkedList();                         
   bool empty();
   int size();
   void push_back(int i);
   void push_front(int i);
   void insert_after (ListNode *p, int i);
   void erase(ListNode *p);
+  void pop_front();
   void pop_back();                             //delete
   int back();
   int front();

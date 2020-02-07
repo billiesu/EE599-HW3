@@ -7,28 +7,17 @@
 
   SinglyLinkedList::SinglyLinkedList(const vector<int> &input, int i){
     int size = input.size();
-    if(i < 0){
+    if(i <= 0){
       head_ = nullptr;
       return;
     }
     if(i > size){
       i = size;
     }
-    // head_ = new ListNode(input[0]);
-    // i--;
-    // ListNode *ptemp = head_;
-    // ListNode *pnew = nullptr;
-    // int count = 1;
- 
-    // while(i-- > 0){
-    //   pnew = new ListNode(input[count]);
-    //   count++;
-    //   ptemp -> next = pnew;
-    //   ptemp = pnew;
-    // }
-    head_ = new ListNode(input[0]);
-    i--;    
-    for(int j = 1; j < i + 1; j++){
+
+    head_ = new ListNode(input[0]); 
+
+    for(int j = 1; j < i; j++){
       SinglyLinkedList::push_back(input[j]);
     }
 
@@ -36,6 +25,12 @@
 
   SinglyLinkedList::~SinglyLinkedList(){
   ListNode *ptemp;
+  if(head_ == nullptr){
+    delete head_;
+    std::cout << "successful delete!" << std::endl;
+    return;
+  }
+
   while(head_ -> next != nullptr){
     ptemp = head_ -> next;
     head_ -> next = ptemp -> next;
@@ -93,7 +88,7 @@
   void SinglyLinkedList::erase(ListNode *p){
     ListNode *ptemp = head_;
     while(ptemp -> next != p){
-      ptemp = ptemp ->next;
+      ptemp = ptemp -> next;
     }
     delete ptemp -> next;       //delete pointer
     ptemp -> next = p -> next;
@@ -107,6 +102,11 @@
     delete ptemp -> next;             //delete pointer
     ptemp -> next = nullptr;
   }
+
+  void SinglyLinkedList::pop_front(){
+    ListNode *ptemp = head_ -> next;            //delete pointer
+    head_ = ptemp;
+  }  
 
   int SinglyLinkedList::back(){
     ListNode *ptemp = SinglyLinkedList::GetBackPointer();
@@ -133,8 +133,8 @@
     }
     ListNode* ptemp;
     ptemp = head_;
-    i--;
-    while(ptemp -> next != nullptr && i-- != 0){
+    
+    while(ptemp -> next != nullptr && --i != 0){
       ptemp = ptemp -> next;
     }
     return ptemp;
