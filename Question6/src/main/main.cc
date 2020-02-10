@@ -8,7 +8,7 @@ using std::ifstream;
 int main()
 {
     ifstream fin;
-    fin.open("/Users/subinling/repos/EE599_HW/hw3/Question6/src/main/vector.txt");
+    fin.open("src/main/vector.txt");
     string s; 
     vector<int> input;
     while(fin >> s){
