@@ -4,7 +4,7 @@
 int main()
 {   
     vector<int> input = {1, 2, 3};
-    SinglyLinkedList list(input, 3);
+    SinglyLinkedList list(input, 6);
     std::cout << "origin list is: ";
     list.print();
     list.push_back(5);

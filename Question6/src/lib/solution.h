@@ -23,8 +23,7 @@ public:
 
 
   vector<int> input;
-  int *currentLocation;
-
+  std::vector<int>::iterator current;
 };
 
 #endif

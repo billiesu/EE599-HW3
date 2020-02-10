@@ -3,6 +3,11 @@
 
 
 bool Solution::ValidBracket(const string &input){
+  if(input.size() == 0){
+    // std::cout << "Input doesn't contain value!!!" << std::endl;
+    return true;
+  }
+
   stack<char> container;
   vector<char> bracket;
   for(auto it: input){

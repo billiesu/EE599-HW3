@@ -5,6 +5,7 @@
 #include <iostream>
 
 using std::vector;
+using std::string;
 
 
 
@@ -31,7 +32,8 @@ public:
   int front();
   ListNode *GetBackPointer();
   ListNode *GetIthPointer(int i);
-  void print();
+  vector<int> print();
+  bool NodeExist(ListNode *p);
 
   ListNode *head_;
 };

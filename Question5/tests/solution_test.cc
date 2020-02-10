@@ -2,6 +2,8 @@
 #include "gtest/gtest.h"
 #include <vector>
 
+
+
 TEST(OperatorSelfAddShould, NotAbove100) {
   AcademicRecord a1(91, 88, 99);
   a1++;
@@ -60,4 +62,16 @@ TEST(OperatorMinusShould, NotBelow0) {
   EXPECT_EQ(expected3, actual3);
 }
 
-
+TEST(CopyConstructorShould, SameValue){
+  AcademicRecord obj1(50, 88, 30);
+  AcademicRecord obj2(obj1);
+  int actual1 = obj1.Maths;
+  int expected1 = obj2.Maths;
+  int actual2 = obj1.Computers;
+  int expected2 = obj2.Computers;
+  int actual3 = obj1.Physics;
+  int expected3 = obj2.Physics;
+  EXPECT_EQ(expected1, actual1);
+  EXPECT_EQ(expected2, actual2);
+  EXPECT_EQ(expected3, actual3);      
+}

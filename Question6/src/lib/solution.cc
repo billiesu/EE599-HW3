@@ -4,7 +4,7 @@
 // copy construct
 LocationPointer::LocationPointer(const vector<int> &scan){
   input = scan;
-  currentLocation = &input[0];
+  current = input.begin();
 }
 
 void LocationPointer::PrintQuestion(){
@@ -23,8 +23,8 @@ void LocationPointer::PrintQuestion(){
 }
 
 void LocationPointer::PointFirstElement(){
-  currentLocation = &input[0];
-  cout << "Output: " << *currentLocation << endl;
+  current = input.begin();
+  cout << "Output: " << *current << endl;
 }
 
 void LocationPointer::PrintVector(const vector<int> &input){
@@ -42,20 +42,32 @@ void LocationPointer::PrintVector(const vector<int> &input){
 }  
 
 void LocationPointer::PointLastElement(){
-  int size = input.size();
-  currentLocation = &input[--size];
-  cout << "Output: " << *currentLocation << endl;
+  current = --input.end();
+  cout << "Output: " << *current << endl;
 }
 
 void LocationPointer::PrintCurrentElement(){
-  cout << "Output: " << *currentLocation << endl;
+  cout << "Output: " << *current << endl;
 }
 
 void LocationPointer::IthElementFromCurrent(int i){
-  for(int j = 0; j < i; j++){
-    currentLocation ++;
+  if(i < 0){
+    cout << "Value i cannot be negative" << endl;
+    return;
   }
-  cout << "Output: " << *currentLocation << endl;
+  std::vector<int>::iterator temp = current;
+  for(int j = 0; j < i; j++){
+    current ++;
+  }
+  // cout << "a:" << std::distance(temp, current) << endl;
+  // cout <<  "b:" << std::distance(temp, input.end()) << endl;
+  if(std::distance(temp, current) < std::distance(temp, input.end())) {
+    cout << "Output: " << *current << endl;
+  }else{
+    cout << "Sorry! You cannot traverse" << i << "elements from your current location." << endl;
+    current = temp;
+  }
+  
 }
 
 // void LocationPointer::Exit(){
